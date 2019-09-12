@@ -1,0 +1,157 @@
+*{
+    font-family: 'Roboto Slab', serif;
+
+
+}
+body,html {
+    height:auto;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; 
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("passport.jpg");
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    }
+.wb-container{
+    max-width: 75.000em;
+    margin: 0 auto;    
+}
+
+   
+
+.wb-active
+{
+    border: solid 0.0.006em white;
+}
+.wb-nav{
+    width: 100%;
+}
+.wb-nav ul{
+    float: right;
+   
+}
+
+.wb-nav ul li{
+    display: inline;
+    padding: 0.625em 1.250em;
+}
+.wb-nav ul li a{
+    text-decoration: none;
+    line-height: 3.750em;
+    color:red;    
+}
+.wb-nav ul li a:hover{
+    color: blueviolet;
+}
+
+
+#register-form
+{
+  border: 1px solid wheat;
+  color:white;
+  width:40%;
+  
+  margin-top: 1em;
+  text-align: center;
+  float: right;
+
+  
+  
+}
+#name1,#userName,#userPw,#pw
+{
+  width:70%;
+}
+#rgstr_btn
+{
+  background: red;
+  color: #ccc;
+  
+}
+#login-form
+{
+  border: 1px solid wheat;
+  color:white;
+  width: 40%;
+  
+  text-align: center;
+  float: right;
+  margin-top: 16em;
+}
+.loginbutton
+{
+ 
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width:80px;
+  border:solid 1px whitesmoke;
+  background: green;
+  cursor: pointer;
+  
+  
+}
+.About
+{
+  border: 1px solid wheat;
+  color:white;
+  width: 40%;
+  clear: both;
+  text-align: center;
+  float: left;
+  margin-top: 1em;
+}  
+  
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+  
+  body > table{
+    width: 80%;
+}
+
+table{
+    border-collapse: collapse;
+}
+table.list{
+    width:100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#PassportForm
+{
+  width:10%;
+  color:white;
+}
+#list
+{
+  color:white;
+}
+    
+
+    
