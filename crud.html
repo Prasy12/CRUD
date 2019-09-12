@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Personal Website">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Prasanna">
+    <meta name="Viewport" content="width=device-width" content="height=device-height">
+    <title>Online Passport Seva</title>
+    <link rel="stylesheet" href="crud.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <div class="wb-container">
+
+            <nav>
+                <div class="wb-nav">
+                    <ul>
+                        <li class="wb-active"><a href="crud.html">Home</a></li>
+                        <li><a href="Apply Now.html">Apply Now</a></li>
+                        <li><a>Track Application</a></li>
+                        <li><a>Download</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+    <div class="wb-container">
+        <div class="About">
+            <h1>About Passport Seva</h1>
+            <p>
+                "To deliver passport services to citizens in a timely, transparent, more
+                accessible, reliable manner and in a comfortable environment through
+                streamlined processes and committed, trained and motivated workforce".
+            </p>
+            <p>The Passport Seva is transforming passport and related services in India to provide a best-in-class
+                experience to Indian citizens. PSP is enabling MEA to deliver passport services in a reliable,
+                convenient and transparent manner, within defined service levels.</p>
+            <p>Passport Seva enables simple, efficient and transparent processes for delivery of passport and related
+                services. Apart from creating a countrywide networked environment for Government staff, it integrates
+                with the State Police for physical verification of applicant's credentials and with India Post for
+                delivery of passports.</p>
+
+        </div>
+    </div>
+
+    <div class="wb-container">
+        <form id="register-form" autocomplete="off">
+            REGISTRATION <br>
+           
+            <input id="name1" type="text" placeholder="Name" value="" /><br>
+            <input id="pw" type="password" placeholder="Password" value="" /><br>
+            <input id="rgstr_btn" type="submit" value="Register" onclick="registervalidate()" />
+        </form>
+
+        <form id="login-form" autocomplete="off">
+            LOGIN <br>
+            <input id="userName" type="text" placeholder="Enter Username" value="" /><br>
+            <input id="userPw" type="password" placeholder="Enter Password" value="" /><br>
+            <a class=loginbutton onclick=login()>Login</a>
+        </form>
+    </div>
+
+    <div id="Result">
+
+    </div>
+</body>
+
+<script src="crud.js"></script>
+
+
+
+
+</html>
