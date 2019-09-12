@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Personal Website">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Prasanna">
+    <meta name="Viewport" content="width=device-width" content="height=device-height">
+    <title>Online Passport Seva</title>
+    <link rel="stylesheet" href="crud.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <div class="wb-container">
+
+            <nav>
+                <div class="wb-nav">
+                    <ul>
+                        <li class="wb-active"><a href="Apply Now.html">Apply Now</a></li>
+                        <li><a href="track.html">Track Application</a></li>
+                        <li><a>Download</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <h1>Passport Form</h1>
+	<form id="PassportForm" autocomplete="off" required>
+
+		<div id="PassportForm1">
+			<table>
+				<td>
+
+                    <tr>Fullname:</tr>
+                    <tr><input type=text name=name></tr>
+                    <tr><b>Email Address:</b></tr>
+                    <tr><input type=email name=mail></tr>
+                    <tr>Phone Number:</tr>
+                    <tr><input type=text name=phno></tr>
+                    <tr>Date of Birth:</tr>
+                    <tr><input type=date name=dob></tr>
+                    <tr>Educational Qualifications:</tr>
+                    <tr><input type=text name=EQ></tr>
+                    <tr>Father's Name:</tr>
+                    <tr><input type=text name=fname></tr>
+                    <tr>Mother's Name:</tr>
+                    <tr><input type=text name=mname></tr>
+                    <tr>Place of Birth</tr>
+                    <tr><input type=text name=POB></tr>
+                    <tr>Gender:</tr>
+                    <tr><input type=text name=gender></tr>
+                    <tr>Address:</tr>
+                    <tr><input type=text name=address></tr>
+                    <tr>ZipCode:</tr>
+                    <tr><input type=number name=zip></tr>
+
+				</td>
+
+				<td>
+					<tr>
+					    <input type=button value="Save"   onclick="SaveItem()"> 
+				     </tr>
+				</td>
+			</table>
+		</div>
+		</form>
+        </div>
+    </header>
+</body>
+<script src="crud.js"></script>
+
+</html>
