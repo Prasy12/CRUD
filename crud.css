@@ -96,6 +96,19 @@ body,html {
   
   
 }
+.savebutton
+{
+ 
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width:35px;
+  border:solid 1px whitesmoke;
+  background: rgb(189, 25, 25);
+  cursor: pointer;
+  
+  
+}
 .About
 {
   border: 1px solid wheat;
