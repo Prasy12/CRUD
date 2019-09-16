@@ -19,8 +19,10 @@
             <nav>
                 <div class="wb-nav">
                     <ul>
-                        <li class="wb-active"><a href="Apply Now.html">Apply Now</a></li>
-                        <li><a >Track Application</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="Apply Now.html">Apply Now</a></li>
+                        <li  class="wb-active"><a href="track.html">Applications</a></li>
+                        <li><a href="trackapplication.html">Track Applications</a></li>
                         <li><a>Download</a></li>
                     </ul>
                 </div>
@@ -29,32 +31,31 @@
             <form id="PassportForm" autocomplete="off" required>
 
                 <div id="PassportForm1">
-                            
-                            Fullname:
-                            <input type=text name=name>
-                            <b>Email Address:</b>
-                            <input type=email name=mail>
-                            <tr>Phone Number:</tr>
-                            <input type=text name=phno>
-                            Date of Birth:
-                            <input type=date name=dob>
-                            Educational Qualifications:
-                            <input type=text name=EQ>
-                            Father's Name:
-                            <input type=text name=fname>
-                            Mother's Name:
-                            <input type=text name=mname>
-                            Place of Birth
-                            <input type=text name=POB>
-                            Gender:
-                            <input type=text name=gender>
-                            Address:
-                            <input type=text name=address>
-                            ZipCode:
-                            <input type=number name=zip>
-                           <a class=savebutton onclick=SaveItem()>Save</a>
-                         
-                   
+
+                    Fullname:
+                    <input type=text name=name>
+                    Email Address:
+                    <input type=email name=mail>
+                    <tr>Phone Number:</tr>
+                    <input type=number name=phno>
+                    Date of Birth:
+                    <input type=date name=dob>
+                    Educational Qualifications:
+                    <input type=text name=EQ>
+                    Father's Name:
+                    <input type=text name=fname>
+                    Mother's Name:
+                    <input type=text name=mname>
+                    Place of Birth:
+                    <input type=text name=POB>
+                    Gender:<br>
+                    <input type="radio" name="gender" value="male" checked> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                    Address:
+                    <input type=text name=address>
+                    ZipCode:
+                    <input type=number name=zip>
+                    <a class=savebutton onclick=SaveItem()>Save</a>
                 </div>
             </form>
         </div>
