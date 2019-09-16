@@ -1,28 +1,37 @@
 
-var urArray = []; var pwarray=[];
+var username = []; var password=[];
 flag = true;
+var usercount=[];
 function signup() 
     {
-          
-       
-if(window.localStorage["username"] != null)
-
-    urArray = JSON.parse(window.localStorage["username"]);
-    urArray.push(document.getElementById("name1").value);
-    window.localStorage["username"] = JSON.stringify(urArray);
+          if(document.getElementById("name1").value == "")
+          {
+              alert("Enter a username");
+          }
+          else if( document.getElementById("pw").value== "")
+          {
+              alert("Enter a password");
+          }
+       else
+       {
+        if(window.localStorage["username"] != null)
+        username = JSON.parse(window.localStorage["username"]);
+        username.push(document.getElementById("name1").value);
+        window.localStorage["username"] = JSON.stringify(username);
    
-    if(window.localStorage["password"] != null)
-    pwarray = JSON.parse(window.localStorage["password"]);
-pwarray.push(document.getElementById("pw").value);
-window.localStorage["password"] = JSON.stringify(pwarray);
-alert("Registered Succesffuly");
-
+       if(window.localStorage["password"] != null)
+       password = JSON.parse(window.localStorage["password"]);
+       password.push(document.getElementById("pw").value);
+       window.localStorage["password"] = JSON.stringify(password);
+       alert("Registered Successfuly");
+       
+       
+       }
 }
  
-function login1() {
+function login() {
     username1 = JSON.parse(localStorage.getItem("username"));
     password1 = JSON.parse(localStorage.getItem("password"));
-    console.log(username1);
         var usernameInput = document.getElementById("userName").value;
         var passwordInput = document.getElementById("userPw").value;
         if(usernameInput!="" && passwordInput!="") {
@@ -41,14 +50,15 @@ function login1() {
         if(flag == true){
             alert('Logged in');
             window.location.assign("Apply Now.html");
-        }else{
+           
+        }
+        else{
             alert('Invalid Username and password');
             document.getElementById("userName").value = "";
             document.getElementById("userPw").value = "";
 
     }
 }
-
 var appname =[];
 var mail=[];
 var phno=[];
@@ -61,7 +71,7 @@ var gender=[];
 var address=[];
 var zip=[];
 function SaveItem() {
-      //name//
+      
     
  if(document.forms.PassportForm.name.value == "")
 {
@@ -104,16 +114,17 @@ else if(document.forms.PassportForm.zip.value == "")
     alert("Enter the ZIP Code");
 }
 else{
+    //name//
     if(window.localStorage["appname"] != null)
-    appname = JSON.parse(window.localStorage["appname"]);
+ appname = JSON.parse(window.localStorage["appname"]);
     appname.push(document.forms.PassportForm.name.value);
     window.localStorage["appname"] = JSON.stringify(appname);
 //mail//
     if(window.localStorage["mail"] != null)
-    mail = JSON.parse(window.localStorage["mail"]);
-    mail.push(document.forms.PassportForm.mail.value);
+   mail = JSON.parse(window.localStorage["mail"]);
+    mail.push(document.forms.PassportForm.mail.value)
     window.localStorage["mail"] = JSON.stringify(mail);
-//phno//
+//phno/
 if(window.localStorage["phno"] != null)
 phno = JSON.parse(window.localStorage["phno"]);
 phno.push(document.forms.PassportForm.phno.value);
@@ -128,7 +139,7 @@ if(window.localStorage["EQ"] != null)
 EQ = JSON.parse(window.localStorage["EQ"]);
 EQ.push(document.forms.PassportForm.EQ.value);
 window.localStorage["EQ"] = JSON.stringify(EQ);
-//fname
+//fnamE
 if(window.localStorage["fname"] != null)
 fname = JSON.parse(window.localStorage["fname"]);
 fname.push(document.forms.PassportForm.fname.value);
@@ -159,17 +170,24 @@ zip = JSON.parse(window.localStorage["zip"]);
 zip.push(document.forms.PassportForm.zip.value);
 window.localStorage["zip"] = JSON.stringify(zip);
 
-window.location.assign("track.html");
-    doShowAll();
+alert("Form submitted successfully");
+document.forms.PassportForm.name.value = "";
+document.forms.PassportForm.mail.value = "";
+document.forms.PassportForm.phno.value = "";
+document.forms.PassportForm.EQ.value = "";
+document.forms.PassportForm.fname.value = "";
+document.forms.PassportForm.mname.value = "";
+document.forms.PassportForm.POB.value = "";
+document.forms.PassportForm.gender.value = "";
+document.forms.PassportForm.address.value = "";
+document.forms.PassportForm.zip.value = "";
+    trackapplication();
 }
 }
-
-
-// dynamically draw the table
-
-function doShowAll() {
-       var key =0;
-       var list = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
+function trackapplication()
+{
+    
+    var list1 = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
            key =  JSON.parse(localStorage.getItem("appname"));;
            key1 = JSON.parse(localStorage.getItem("mail"));;
            key2= JSON.parse(localStorage.getItem('phno'));
@@ -181,11 +199,12 @@ function doShowAll() {
            key8 = JSON.parse(localStorage.getItem('address'));
            key9 = JSON.parse(localStorage.getItem('zip'));
            key10 = JSON.parse(localStorage.getItem('dob'));
-           for(i=0;i<key.length;i++)
-           {
-           list += "<tr><td>" + key[i] + "</td>\n<td>"
-           + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"+key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+ "</td>\n<td>"+key10[i]+"</td><td><select><option>select</option><option>Approved</option><option>Rejected</option></select></td></tr>\n";
-           }
+           count = key.length-1;
+           
+           list1 += "<tr><td>" + key[count] + "</td>\n<td>"
+           + key1[count] +"</td>\n<td>"+key2[count]+"</td>\n<td>"+key3[count]+"</td>\n<td>"+key4[count]+"</td>\n<td>"+key5[count]+"</td>\n<td>"+key6[count]+"</td>\n<td>"+key7[count]+"</td>\n<td>"+key8[count]+"</td>\n<td>"+key9[count]+ "</td>\n<td>"+key10[count]+"</td><td><select><option>select</option><option>Approved</option><option>Rejected</option></select></td></tr>\n";
+           document.getElementById('list1').innerHTML = list1;
+        
        
-       document.getElementById('list').innerHTML = list;
 }
+
