@@ -1,7 +1,7 @@
 
 var username = []; var password=[];
 flag = true;
-var c_id =0;
+var id =0;
 function signup() 
     {
           if(document.getElementById("name1").value == "")
@@ -28,18 +28,14 @@ function signup()
        
        }
 }
-var ui=[];
-var pi=[];
+;
 function login() {
  
     username1 = JSON.parse(localStorage.getItem("username"));
-password1 = JSON.parse(localStorage.getItem("password"));
+    password1 = JSON.parse(localStorage.getItem("password"));
     var usernameInput = document.getElementById("userName").value;
-   
-    ui.push(usernameInput);
-    
     var passwordInput = document.getElementById("userPw").value;
-    pi.push(passwordInput);
+    
    
         if(usernameInput!="" && passwordInput!="") {
            for(i=0;i<username1.length;i++){
@@ -70,40 +66,6 @@ password1 = JSON.parse(localStorage.getItem("password"));
 
     }
 }
-var index=0;
-
-function login1() {
-  alert("asdasd");
-    username1 = JSON.parse(localStorage.getItem("username"));
-   password1 = JSON.parse(localStorage.getItem("password"));
-    var usernameInput = document.getElementById("userName").value;
-    var passwordInput = document.getElementById("userPw").value;
-    
-       if(usernameInput!="" && passwordInput!="") {
-           for(i=0;i<username1.length;i++){
-               alert(i);
-           if(usernameInput == username1[i] && passwordInput == password1[i]) 
-            {
-             
-                flag = true; 
-                index=i;
-                alert(index);
-                break;
-            } else {
-                flag = false;
-            }
-           }
-           
-        }
-         
-        if(flag == true){
-          
-            return index;
-            
-        }
-
-
-    }
 
 
 
