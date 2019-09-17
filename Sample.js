@@ -1,7 +1,7 @@
 
 var username = []; var password=[];
 flag = true;
-var usercount=[];
+var c_id =0;
 function signup() 
     {
           if(document.getElementById("name1").value == "")
@@ -28,17 +28,27 @@ function signup()
        
        }
 }
- 
+var ui=[];
+var pi=[];
 function login() {
+ 
     username1 = JSON.parse(localStorage.getItem("username"));
-    password1 = JSON.parse(localStorage.getItem("password"));
-        var usernameInput = document.getElementById("userName").value;
-        var passwordInput = document.getElementById("userPw").value;
+password1 = JSON.parse(localStorage.getItem("password"));
+    var usernameInput = document.getElementById("userName").value;
+   
+    ui.push(usernameInput);
+    
+    var passwordInput = document.getElementById("userPw").value;
+    pi.push(passwordInput);
+   
         if(usernameInput!="" && passwordInput!="") {
            for(i=0;i<username1.length;i++){
            if(usernameInput == username1[i] && passwordInput == password1[i]) 
             {
-                flag = true;
+             
+                flag = true; id=i;
+                alert(i);
+                localStorage.setItem("userid",i);
                 break;
             } else {
                 flag = false;
@@ -50,7 +60,8 @@ function login() {
         if(flag == true){
             alert('Logged in');
             window.location.assign("Apply Now.html");
-           
+       
+            
         }
         else{
             alert('Invalid Username and password');
@@ -59,6 +70,43 @@ function login() {
 
     }
 }
+var index=0;
+
+function login1() {
+  alert("asdasd");
+    username1 = JSON.parse(localStorage.getItem("username"));
+   password1 = JSON.parse(localStorage.getItem("password"));
+    var usernameInput = document.getElementById("userName").value;
+    var passwordInput = document.getElementById("userPw").value;
+    
+       if(usernameInput!="" && passwordInput!="") {
+           for(i=0;i<username1.length;i++){
+               alert(i);
+           if(usernameInput == username1[i] && passwordInput == password1[i]) 
+            {
+             
+                flag = true; 
+                index=i;
+                alert(index);
+                break;
+            } else {
+                flag = false;
+            }
+           }
+           
+        }
+         
+        if(flag == true){
+          
+            return index;
+            
+        }
+
+
+    }
+
+
+
 var appname =[];
 var mail=[];
 var phno=[];
@@ -70,9 +118,13 @@ var POB=[];
 var gender=[];
 var address=[];
 var zip=[];
+
+
+
+
 function SaveItem() {
-      
     
+   
  if(document.forms.PassportForm.name.value == "")
 {
     alert("Please enter the name");
@@ -181,12 +233,12 @@ document.forms.PassportForm.POB.value = "";
 document.forms.PassportForm.gender.value = "";
 document.forms.PassportForm.address.value = "";
 document.forms.PassportForm.zip.value = "";
-    trackapplication();
+    
 }
 }
 function trackapplication()
 {
-    
+    var test=localStorage.getItem("userid")
     var list1 = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
            key =  JSON.parse(localStorage.getItem("appname"));;
            key1 = JSON.parse(localStorage.getItem("mail"));;
@@ -199,10 +251,10 @@ function trackapplication()
            key8 = JSON.parse(localStorage.getItem('address'));
            key9 = JSON.parse(localStorage.getItem('zip'));
            key10 = JSON.parse(localStorage.getItem('dob'));
-           count = key.length-1;
            
-           list1 += "<tr><td>" + key[count] + "</td>\n<td>"
-           + key1[count] +"</td>\n<td>"+key2[count]+"</td>\n<td>"+key3[count]+"</td>\n<td>"+key4[count]+"</td>\n<td>"+key5[count]+"</td>\n<td>"+key6[count]+"</td>\n<td>"+key7[count]+"</td>\n<td>"+key8[count]+"</td>\n<td>"+key9[count]+ "</td>\n<td>"+key10[count]+"</td><td><select><option>select</option><option>Approved</option><option>Rejected</option></select></td></tr>\n";
+           
+           list1 += "<tr><td>" + key[test] + "</td>\n<td>"
+           + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"</td><td><select><option>select</option><option>Approved</option><option>Rejected</option></select></td></tr>\n";
            document.getElementById('list1').innerHTML = list1;
         
        
