@@ -9,6 +9,7 @@ var POB=[];
 var gender=[];
 var address=[];
 var zip=[];
+var status=[];
 function SaveItem() {
       
     
@@ -112,6 +113,8 @@ window.localStorage["zip"] = JSON.stringify(zip);
 
 
 alert("Form submitted successfully");
+var form_submitted_users=[];
+alert(username[id]);
 document.forms.PassportForm.name.value = "";
 document.forms.PassportForm.mail.value = "";
 document.forms.PassportForm.phno.value = "";
@@ -124,11 +127,6 @@ document.forms.PassportForm.address.value = "";
 document.forms.PassportForm.zip.value = "";
 doShowAll();
 }
-}
-function savebutton(){
-    row = td.parentElement.parentElement;
-    
-
 }
 
 // dynamically draw the table
@@ -149,72 +147,61 @@ function doShowAll() {
            key9 = JSON.parse(localStorage.getItem('zip'));
            key10 = JSON.parse(localStorage.getItem('dob'));
            for(i=0;i<key.length;i++)
-           {
+           { var str= "status" + i;
            list += "<tr><td>" + key[i] + "</td>\n<td>"
-           + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"+key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+ "</td>\n<td>"+key10[i]+"</td><td><select value='1' id='status'><option value='Select'>select</option><option value='Approved'>Approved</option><option value='Rejected'>Rejected</option></select></td></tr>\n";
+           + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"+
+           key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+ 
+           "</td>\n<td>"+key10[i]+"</td><td><select value='1' id=" + str + "><option value=''>select</option><option value='Approved'>Approved</option><option value='Rejected'>Rejected</option></select></td></tr>\n";
            }
            
            
        document.getElementById('list').innerHTML = list;
        
-        comp1=document.getElementById("status").value;
-
-          localStorage.setItem("status",comp1);
-
-
-}
-
-function Save(){
-    
-    var table = document.getElementById("ptable");
-    i=1;
-    key =  JSON.parse(localStorage.getItem("appname"));;
-    key1 = JSON.parse(localStorage.getItem("mail"));;
-    key2= JSON.parse(localStorage.getItem('phno'));
-    key3 = JSON.parse(localStorage.getItem('EQ'));
-    key4 = JSON.parse(localStorage.getItem('fname'));
-    key5 = JSON.parse(localStorage.getItem('mname'));
-    key6 = JSON.parse(localStorage.getItem('POB'));
-    key7 =JSON.parse(localStorage.getItem('gender'));
-    key8 = JSON.parse(localStorage.getItem('address'));
-    key9 = JSON.parse(localStorage.getItem('zip'));
-    key10 = JSON.parse(localStorage.getItem('dob'));
-    key11 = JSON.parse(localStorage.getItem('status')) ;
-    
-    
-    while (i <=key.length ) {
- 
-        var row = table.insertRow(i);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
-        var cell7 = row.insertCell(6);
-        var cell8 = row.insertCell(7);
-        var cell9 = row.insertCell(8);
-        var cell10 = row.insertCell(9);
-        var cell11 = row.insertCell(10);
-        var cell12 = row.insertCell(11);
-
- 
-        cell1.innerHTML = key[i];
-        cell2.innerHTML = key1[i];
-        cell3.innerHTML = key2[i];
-        cell4.innerHTML = key3[i];
-        cell5.innerHTML = key4[i];
-        cell6.innerHTML = key5[i];
-        cell7.innerHTML = key6[i];
-        cell8.innerHTML = key7[i];
-        cell9.innerHTML = key8[i];
-        cell10.innerHTML = key9[i];
-        cell11.innerHTML = key10[i];
-        cell12.innerHTML = key11[i];
-
        
- 
-          i++;
-    }  
+    
+   
+       
+
+
 }
+
+
+    
+    function Save(){
+
+
+        for(i=0;i<localStorage.length;i++)
+        { var status="status" + i;
+        if(window.localStorage["status"] !=null)
+        status = JSON.parse(window.localStorage[status]);
+         
+        status.push(document.getElementById(status).value);
+       
+        window.localStorage[status] = JSON.stringify(status);
+        }
+        
+       
+       var list = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
+       key =  JSON.parse(localStorage.getItem("appname"));;
+       key1 = JSON.parse(localStorage.getItem("mail"));;
+       key2= JSON.parse(localStorage.getItem('phno'));
+       key3 = JSON.parse(localStorage.getItem('EQ'));
+       key4 = JSON.parse(localStorage.getItem('fname'));
+       key5 = JSON.parse(localStorage.getItem('mname'));
+       key6 = JSON.parse(localStorage.getItem('POB'));
+       key7 =JSON.parse(localStorage.getItem('gender'));
+       key8 = JSON.parse(localStorage.getItem('address'));
+       key9 = JSON.parse(localStorage.getItem('zip'));
+       key10 = JSON.parse(localStorage.getItem('dob'));
+       key11 = JSON.parse(localStorage.getItem('status1'));
+       for(i=0;i<key.length;i++)
+       {
+        
+       list += "<tr><td>" + key[i] + "</td>\n<td>"
+       + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"+key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+ "</td>\n<td>"+key10[i]+"</td>\n<td>"+key11[i]+"</td></tr>\n";
+       }
+       document.getElementById('list').innerHTML = list;  
+   }
+   
+    
 
