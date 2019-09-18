@@ -4,6 +4,7 @@ flag = true;
 var id =0;
 function signup() 
     {
+        
           if(document.getElementById("name1").value == "")
           {
               alert("Enter a username");
@@ -43,8 +44,7 @@ function login() {
             {
              
                 flag = true; id=i;
-                alert(i);
-                localStorage.setItem("userid",i);
+                localStorage.setItem("userid",id);
                 break;
             } else {
                 flag = false;
@@ -85,8 +85,7 @@ var zip=[];
 
 
 function SaveItem() {
-    
-   
+      
  if(document.forms.PassportForm.name.value == "")
 {
     alert("Please enter the name");
@@ -196,6 +195,7 @@ document.forms.PassportForm.gender.value = "";
 document.forms.PassportForm.address.value = "";
 document.forms.PassportForm.zip.value = "";
     
+trackapplication();
 }
 }
 function trackapplication()
@@ -213,10 +213,10 @@ function trackapplication()
            key8 = JSON.parse(localStorage.getItem('address'));
            key9 = JSON.parse(localStorage.getItem('zip'));
            key10 = JSON.parse(localStorage.getItem('dob'));
-           
+           key11 = JSON.parse(localStorage.getItem('status'));
            
            list1 += "<tr><td>" + key[test] + "</td>\n<td>"
-           + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"</td><td><select><option>select</option><option>Approved</option><option>Rejected</option></select></td></tr>\n";
+           + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"</td>\n<td>"+key11[test]+"</td></tr>\n";
            document.getElementById('list1').innerHTML = list1;
         
        
