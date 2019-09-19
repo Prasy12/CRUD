@@ -113,8 +113,6 @@ window.localStorage["zip"] = JSON.stringify(zip);
 
 
 alert("Form submitted successfully");
-var form_submitted_users=[];
-alert(username[id]);
 document.forms.PassportForm.name.value = "";
 document.forms.PassportForm.mail.value = "";
 document.forms.PassportForm.phno.value = "";
@@ -129,12 +127,12 @@ doShowAll();
 }
 }
 
-// dynamically draw the table
+
 var str;
 function doShowAll() {
     
        var key =0;
-       var list = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
+       var list = "<tr><th>S.No</th><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Nationality</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
            key =  JSON.parse(localStorage.getItem("appname"));;
            key1 = JSON.parse(localStorage.getItem("mail"));;
            key2= JSON.parse(localStorage.getItem('phno'));
@@ -148,7 +146,8 @@ function doShowAll() {
            key10 = JSON.parse(localStorage.getItem('dob'));
            for(i=0;i<key.length;i++)
            { str= "status" + i;
-           list += "<tr><td>" + key[i] + "</td>\n<td>"
+           var sno=i+1; 
+           list += "<tr><td>" + sno +"</td>\n<td>" + key[i] + "</td>\n<td>"
            + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"+
            key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+ 
            "</td>\n<td>"+key10[i]+"</td><td><select value='1' id=" + str + "><option value=''>select</option><option value='Approved'>Approved</option><option value='Rejected'>Rejected</option></select></td></tr>\n";
@@ -156,20 +155,14 @@ function doShowAll() {
            
            
        document.getElementById('list').innerHTML = list;
-       
-       
-    
-   
-       
-
 
 }
 
 
-    
-    function Save(){
+var str;
+function Save(){
        
-        var list = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
+        var list = "<tr><th>S.No</th><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Nationality</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
         key =  JSON.parse(localStorage.getItem("appname"));;
         key1 = JSON.parse(localStorage.getItem("mail"));;
         key2= JSON.parse(localStorage.getItem('phno'));
@@ -197,14 +190,14 @@ function doShowAll() {
 
        
        for(i=0;i<key.length;i++)
-       {   var str="status" + i;   
-       list += "<tr><td>" + key[i] + "</td>\n<td>"
+       {   var str="status" + i;  
+       var sno=i+1; 
+       list += "<tr><td>" +sno+"</td>\n<td>" + key[i] + "</td>\n<td>"
        + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"
        +key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+
        "</td>\n<td>"+key10[i]+"</td>\n<td>"+key11[i].str+"</td></tr>\n";
        }
        document.getElementById('list').innerHTML = list;  
-   }
-   
+   }   
     
 
