@@ -1,3 +1,29 @@
+var modal = document.getElementById("myModal");
+ 
+var btn = document.getElementById("myBtn");
+ 
+var span = document.getElementsByClassName("close")[0];
+ 
+btn.onclick = function() 
+{
+  modal.style.display = "block";
+}
+ 
+span.onclick = function() {
+  modal.style.display = "none";
+}
+ 
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+
+
 
 var username = []; var password=[];
 flag = true;
@@ -200,8 +226,9 @@ trackapplication();
 }
 function trackapplication()
 {
+
     var test=localStorage.getItem("userid")
-    var list1 = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
+    var list1 = "<tr><th>S.No</th><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Nationality</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
            key =  JSON.parse(localStorage.getItem("appname"));;
            key1 = JSON.parse(localStorage.getItem("mail"));;
            key2= JSON.parse(localStorage.getItem('phno'));
@@ -216,9 +243,9 @@ function trackapplication()
          
            
            {   var display= "status"+ test;  
-            list1 += "<tr><td>" + key[test] + "</td>\n<td>"
+            list1 += "<tr><td>"+ test + "</td>\n<td>" + key[test] + "</td>\n<td>"
             + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"\n<td>"+
-            localStorage.getItem(display)+ "</td></tr>\n";
+            JSON.parse(localStorage.getItem(display))+ "</td></tr>\n";
              }
              document.getElementById('list1').innerHTML = list1;
 
