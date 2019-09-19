@@ -194,7 +194,7 @@ document.forms.PassportForm.POB.value = "";
 document.forms.PassportForm.gender.value = "";
 document.forms.PassportForm.address.value = "";
 document.forms.PassportForm.zip.value = "";
-    
+
 trackapplication();
 }
 }
@@ -213,11 +213,16 @@ function trackapplication()
            key8 = JSON.parse(localStorage.getItem('address'));
            key9 = JSON.parse(localStorage.getItem('zip'));
            key10 = JSON.parse(localStorage.getItem('dob'));
+         
            
+           {   var display= "status"+ test;  
+            list1 += "<tr><td>" + key[test] + "</td>\n<td>"
+            + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"\n<td>"+
+            localStorage.getItem(display)+ "</td></tr>\n";
+             }
+             document.getElementById('list1').innerHTML = list1;
+
            
-           list1 += "<tr><td>" + key[test] + "</td>\n<td>"
-           + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"</td></tr>\n";
-           document.getElementById('list1').innerHTML = list1;
         
        
 }
