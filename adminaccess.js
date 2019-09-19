@@ -9,7 +9,7 @@ var POB=[];
 var gender=[];
 var address=[];
 var zip=[];
-var status=[];
+var status1=[];
 function SaveItem() {
       
     
@@ -130,7 +130,7 @@ doShowAll();
 }
 
 // dynamically draw the table
-
+var str;
 function doShowAll() {
     
        var key =0;
@@ -147,7 +147,7 @@ function doShowAll() {
            key9 = JSON.parse(localStorage.getItem('zip'));
            key10 = JSON.parse(localStorage.getItem('dob'));
            for(i=0;i<key.length;i++)
-           { var str= "status" + i;
+           { str= "status" + i;
            list += "<tr><td>" + key[i] + "</td>\n<td>"
            + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"+
            key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+ 
@@ -168,37 +168,40 @@ function doShowAll() {
 
     
     function Save(){
-
-
-        for(i=0;i<localStorage.length;i++)
-        { var status="status" + i;
-        if(window.localStorage["status"] !=null)
-        status = JSON.parse(window.localStorage[status]);
-         
-        status.push(document.getElementById(status).value);
        
-        window.localStorage[status] = JSON.stringify(status);
-        }
+        var list = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
+        key =  JSON.parse(localStorage.getItem("appname"));;
+        key1 = JSON.parse(localStorage.getItem("mail"));;
+        key2= JSON.parse(localStorage.getItem('phno'));
+        key3 = JSON.parse(localStorage.getItem('EQ'));
+        key4 = JSON.parse(localStorage.getItem('fname'));
+        key5 = JSON.parse(localStorage.getItem('mname'));
+        key6 = JSON.parse(localStorage.getItem('POB'));
+        key7 =JSON.parse(localStorage.getItem('gender'));
+        key8 = JSON.parse(localStorage.getItem('address'));
+        key9 = JSON.parse(localStorage.getItem('zip'));
+        key10 = JSON.parse(localStorage.getItem('dob'));
+       var key11=[];
+
+        for(i=0;i<key.length;i++)
+        { 
         
        
-       var list = "<tr><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Place of Birth</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
-       key =  JSON.parse(localStorage.getItem("appname"));;
-       key1 = JSON.parse(localStorage.getItem("mail"));;
-       key2= JSON.parse(localStorage.getItem('phno'));
-       key3 = JSON.parse(localStorage.getItem('EQ'));
-       key4 = JSON.parse(localStorage.getItem('fname'));
-       key5 = JSON.parse(localStorage.getItem('mname'));
-       key6 = JSON.parse(localStorage.getItem('POB'));
-       key7 =JSON.parse(localStorage.getItem('gender'));
-       key8 = JSON.parse(localStorage.getItem('address'));
-       key9 = JSON.parse(localStorage.getItem('zip'));
-       key10 = JSON.parse(localStorage.getItem('dob'));
-       key11 = JSON.parse(localStorage.getItem('status1'));
+         str= "status" + i;
+        
+        status1= document.getElementById(str).value;
+        window.localStorage[str] = JSON.stringify(status1); 
+        key11.push({str:document.getElementById(str).value});  
+       }
+
+
+       
        for(i=0;i<key.length;i++)
-       {
-        
+       {   var str="status" + i;   
        list += "<tr><td>" + key[i] + "</td>\n<td>"
-       + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"+key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+ "</td>\n<td>"+key10[i]+"</td>\n<td>"+key11[i]+"</td></tr>\n";
+       + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"
+       +key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+
+       "</td>\n<td>"+key10[i]+"</td>\n<td>"+key11[i].str+"</td></tr>\n";
        }
        document.getElementById('list').innerHTML = list;  
    }
