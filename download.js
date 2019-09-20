@@ -14,6 +14,7 @@
 
 function download()
 {
+           
     var test=localStorage.getItem("userid");
     var display= "status"+ test;  
     var validate=JSON.parse(localStorage.getItem(display))
@@ -39,13 +40,19 @@ function download()
         var type="Type:";
         var h="P";
         var k="3811567890"+test;
-        var o=key[test];
+        
 
-         document.getElementById('download').innerHTML =type+h+"<br>"+a+key[test] +"<br>"+b+ key4[test]+"<br>"+c + key5[test]+"<br>"+d+ key6[test]+"<br>"+e+ key7[test]+"<br>"+f+ key8[test]+"<br>"+g+ key10[test]+"<br>"+h+":"+o+"::::"+k;
+         document.getElementById('download').innerHTML =type+h+"<br>"+a+key[test] +"<br>"+b+ key4[test]+"<br>"+c + key5[test]+"<br>"+d+ key6[test]+"<br>"+e+ key7[test]+"<br>"+f+ key8[test]+"<br>"+g+ key10[test]+"<br>"+h+":"+key[test]+"::"+k+":::"+key6[test];
          
+    }
+    else if(validate==null)
+    {
+        alert("Application is submitted. Please wait for status...");
+        window.location.assign("trackapplication.html");
     }
     else
     {
 alert("Sorry, your form has been rejected");
+window.location.assign("index.html");
     }
 }
