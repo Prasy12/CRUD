@@ -1,3 +1,4 @@
+/*modal*/
 var modal = document.getElementById("myModal");
  
 var btn = document.getElementById("myBtn");
@@ -23,6 +24,9 @@ window.onclick = function(event) {
 
 
 
+flag =1;
+var countfromls=1;
+localStorage.setItem('count',countfromls);
 
 
 var username = []; var password=[];
@@ -30,39 +34,73 @@ flag = true;
 var id =0;
 function signup() 
     {
+           
+                if((document.getElementById("name1").value == "")) 
+                {
+                    alert("Enter a username"); 
+                    flag =0;
+                }
+                else if( document.getElementById("pw").value== "")
+                {
+                    alert("Enter a password");
+                    flag=0;
+                } 
+                
+
+                arrayFromStorage = JSON.parse(localStorage.getItem("username"));
+                if(localStorage.getItem("username") == null)
+                {
+                    flag=1;
+                }
+                else
+                 {
+                    for(i=0;i<arrayFromStorage.length;i++)
+                    {
+                    
+                        if( document.getElementById("name1").value == arrayFromStorage[i])
+                        {
+                            flag=2;
+                        }
+                  }
+                }
+                
+                
+                if( flag ==2)
+                {
+                    alert("Username already exists");
+                }
+             else if(flag==1)
+             {
+              if(window.localStorage["username"] != null)
+          {username = JSON.parse(window.localStorage["username"]);}
+          username.push(document.getElementById("name1").value);
+          window.localStorage["username"] = JSON.stringify(username);
+      
+         if(window.localStorage["password"] != null)
+         {password = JSON.parse(window.localStorage["password"]);}
+         password.push(document.getElementById("pw").value);
+         window.localStorage["password"] = JSON.stringify(password);
+         alert("Registered Successfuly");
+         
+         
+             
+             }
+
+            
+            
         
-          if(document.getElementById("name1").value == "")
-          {
-              alert("Enter a username");
-          }
-          else if( document.getElementById("pw").value== "")
-          {
-              alert("Enter a password");
-          }
-       else
-       {
-        if(window.localStorage["username"] != null)
-        username = JSON.parse(window.localStorage["username"]);
-        username.push(document.getElementById("name1").value);
-        window.localStorage["username"] = JSON.stringify(username);
-   
-       if(window.localStorage["password"] != null)
-       password = JSON.parse(window.localStorage["password"]);
-       password.push(document.getElementById("pw").value);
-       window.localStorage["password"] = JSON.stringify(password);
-       alert("Registered Successfuly");
-       
-       
-       }
+
+
+            
 }
-;
+
 function login() {
  
     username1 = JSON.parse(localStorage.getItem("username"));
     password1 = JSON.parse(localStorage.getItem("password"));
     var usernameInput = document.getElementById("userName").value;
     var passwordInput = document.getElementById("userPw").value;
-    
+   
    
         if(usernameInput!="" && passwordInput!="") {
            for(i=0;i<username1.length;i++){
@@ -81,16 +119,23 @@ function login() {
          
         if(flag == true){
             alert('Logged in');
-            window.location.assign("Apply Now.html");
-       
+            validateform();
             
+       
         }
+         else if(usernameInput=="admin" && passwordInput=="admin")
+    {
+       
+        window.location.assign("allapplications.html");
+    }
+        
         else{
             alert('Invalid Username and password');
             document.getElementById("userName").value = "";
             document.getElementById("userPw").value = "";
 
     }
+    
 }
 
 
@@ -108,7 +153,26 @@ var address=[];
 var zip=[];
 
 
+function validateform(){
 
+    var test=localStorage.getItem("userid");
+          alert(test);
+
+    key =  JSON.parse(localStorage.getItem("appname"));
+
+
+    if(key==null || key[test] == null){
+        window.location.assign("Apply Now.html");
+        SaveItem();
+        
+    }
+    else{
+        alert(" Passport application already submitted");
+        window.location.assign("trackapplication.html");
+    }
+
+
+}
 
 function SaveItem() {
       
@@ -155,57 +219,57 @@ else if(document.forms.PassportForm.zip.value == "")
 else{
     //name//
     if(window.localStorage["appname"] != null)
- appname = JSON.parse(window.localStorage["appname"]);
+ {appname = JSON.parse(window.localStorage["appname"]);}
     appname.push(document.forms.PassportForm.name.value);
     window.localStorage["appname"] = JSON.stringify(appname);
 //mail//
     if(window.localStorage["mail"] != null)
-   mail = JSON.parse(window.localStorage["mail"]);
+   {mail = JSON.parse(window.localStorage["mail"]);}
     mail.push(document.forms.PassportForm.mail.value)
     window.localStorage["mail"] = JSON.stringify(mail);
 //phno/
 if(window.localStorage["phno"] != null)
-phno = JSON.parse(window.localStorage["phno"]);
+{phno = JSON.parse(window.localStorage["phno"]);}
 phno.push(document.forms.PassportForm.phno.value);
 window.localStorage["phno"] = JSON.stringify(phno);
 //dob//
 if(window.localStorage["dob"] != null)
-dob = JSON.parse(window.localStorage["dob"]);
+{dob = JSON.parse(window.localStorage["dob"]);}
 dob.push(document.forms.PassportForm.dob.value);
 window.localStorage["dob"] = JSON.stringify(dob);
 //EQ
 if(window.localStorage["EQ"] != null)
-EQ = JSON.parse(window.localStorage["EQ"]);
+{EQ = JSON.parse(window.localStorage["EQ"]);}
 EQ.push(document.forms.PassportForm.EQ.value);
 window.localStorage["EQ"] = JSON.stringify(EQ);
 //fnamE
 if(window.localStorage["fname"] != null)
-fname = JSON.parse(window.localStorage["fname"]);
+{fname = JSON.parse(window.localStorage["fname"]);}
 fname.push(document.forms.PassportForm.fname.value);
 window.localStorage["fname"] = JSON.stringify(fname);
 //mname
 if(window.localStorage["mname"] != null)
-mname = JSON.parse(window.localStorage["mname"]);
+{mname = JSON.parse(window.localStorage["mname"]);}
 mname.push(document.forms.PassportForm.mname.value);
 window.localStorage["mname"] = JSON.stringify(mname);
 //POB
 if(window.localStorage["POB"] != null)
-POB = JSON.parse(window.localStorage["POB"]);
+{POB = JSON.parse(window.localStorage["POB"]);}
 POB.push(document.forms.PassportForm.POB.value);
 window.localStorage["POB"] = JSON.stringify(POB);
 //gender
 if(window.localStorage["gender"] != null)
-gender = JSON.parse(window.localStorage["gender"]);
+{gender = JSON.parse(window.localStorage["gender"]);}
 gender.push(document.forms.PassportForm.gender.value);
 window.localStorage["gender"] = JSON.stringify(gender);
 //address
 if(window.localStorage["address"] != null)
-address = JSON.parse(window.localStorage["address"]);
+{address = JSON.parse(window.localStorage["address"]);}
 address.push(document.forms.PassportForm.address.value);
 window.localStorage["address"] = JSON.stringify(address);
 //zip
 if(window.localStorage["zip"] != null)
-zip = JSON.parse(window.localStorage["zip"]);
+{zip = JSON.parse(window.localStorage["zip"]);}
 zip.push(document.forms.PassportForm.zip.value);
 window.localStorage["zip"] = JSON.stringify(zip);
 
@@ -243,14 +307,20 @@ function trackapplication()
          
            
            {   var display= "status"+ test;  
-            list1 += "<tr><td>"+ test + "</td>\n<td>" + key[test] + "</td>\n<td>"
+           if(localStorage.getItem(display)==null){
+               display1 = "Pending";
+            list1 += "<tr><td>"+ "1" + "</td>\n<td>" + key[test] + "</td>\n<td>"
+            + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"\n<td>"+
+            display1+ "</td></tr>\n";
+           }else{
+            list1 += "<tr><td>"+ "1" + "</td>\n<td>" + key[test] + "</td>\n<td>"
             + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"\n<td>"+
             JSON.parse(localStorage.getItem(display))+ "</td></tr>\n";
+           }
              }
              document.getElementById('list1').innerHTML = list1;
 
            
-        
-       
+             
 }
 
