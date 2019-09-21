@@ -30,7 +30,7 @@ localStorage.setItem('count',countfromls);
 
 
 var username = []; var password=[];
-flag = true;
+var f;
 var id =0;
 function signup() 
     {
@@ -100,24 +100,33 @@ function login() {
     password1 = JSON.parse(localStorage.getItem("password"));
     var usernameInput = document.getElementById("userName").value;
     var passwordInput = document.getElementById("userPw").value;
+     { if(usernameInput=="")
+      {
+          alert("Enter a username");
+      }
+      else if(passwordInput=="")
+      {
+          alert("Enter a password")
+      }
    
-   
-        if(usernameInput!="" && passwordInput!="") {
-           for(i=0;i<username1.length;i++){
+        else
+         {
+           for(i=0;i<username1.length;i++)
+           {
            if(usernameInput == username1[i] && passwordInput == password1[i]) 
             {
              
-                flag = true; id=i;
+                f = true; id=i;
                 localStorage.setItem("userid",id);
                 break;
             } else {
-                flag = false;
+                f = false;
             }
            }
-           
+        }  
         }
          
-        if(flag == true){
+        if(f == true){
             alert('Logged in');
             validateform();
             
@@ -156,8 +165,6 @@ var zip=[];
 function validateform(){
 
     var test=localStorage.getItem("userid");
-          alert(test);
-
     key =  JSON.parse(localStorage.getItem("appname"));
 
 
