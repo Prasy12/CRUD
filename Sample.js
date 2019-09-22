@@ -37,7 +37,7 @@ function signup()
            
                 if((document.getElementById("name1").value == "")) 
                 {
-                    alert("Enter a username"); 
+                    alert("Enter an username"); 
                     flag =0;
                 }
                 else if( document.getElementById("pw").value== "")
@@ -67,7 +67,7 @@ function signup()
                 
                 if( flag ==2)
                 {
-                    alert("Username already exists");
+                    alert("Oops! Username already exists!");
                 }
              else if(flag==1)
              {
@@ -80,7 +80,7 @@ function signup()
          {password = JSON.parse(window.localStorage["password"]);}
          password.push(document.getElementById("pw").value);
          window.localStorage["password"] = JSON.stringify(password);
-         alert("Registered Successfuly");
+         alert("Registered Successfuly!");
          
          
              
@@ -102,11 +102,11 @@ function login() {
     var passwordInput = document.getElementById("userPw").value;
      { if(usernameInput=="")
       {
-          alert("Enter a username");
+          alert("Enter an username!");
       }
       else if(passwordInput=="")
       {
-          alert("Enter a password")
+          alert("Enter a password!")
       }
    
         else
@@ -127,7 +127,7 @@ function login() {
         }
          
         if(f == true){
-            alert('Logged in');
+            alert("Welcome to Passport Seva!");
             validateform();
             
        
@@ -139,7 +139,7 @@ function login() {
     }
         
         else{
-            alert('Invalid Username and password');
+            alert('Invalid Username and password!');
             document.getElementById("userName").value = "";
             document.getElementById("userPw").value = "";
 
@@ -174,7 +174,8 @@ function validateform(){
         
     }
     else{
-        alert(" Passport application already submitted");
+        alert(" Welcome back " + key[test]+"! Your application is being processed...");
+        alert("Redirecting you to status page!")
         window.location.assign("trackapplication.html");
     }
 
@@ -185,7 +186,7 @@ function SaveItem() {
       
  if(document.forms.PassportForm.name.value == "")
 {
-    alert("Please enter the name");
+    alert("Please enter your name");
     
 }
 else if (document.forms.PassportForm.mail.value == "")
