@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Personal Website">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Prasanna">
+    <meta name="Viewport" content="width=device-width" content="height=device-height">
+    <title>Online Passport Seva</title>
+    <link rel="stylesheet" href="../Stylesheets/crud.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <div class="wb-container">
+
+            <nav>
+                <div class="wb-nav">
+                    <ul>
+                        <li><a href="../Sources/index.html">Home</a></li>
+                        <li><a href="../Sources/Apply Now.html">Apply Now</a></li>
+                        <li><a href="../Sources/trackapplication.html">Track Applications</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="wb-container">
+        <form id="PassportForm" autocomplete="off">
+            <div class="ppheading">PASSPORT FORM:</div>
+            <fieldset>
+                    <div class=col-25>  
+                FullName:
+            </div>
+            <div class=col-75>
+                <input placeholder="Your name" type="text" tabindex="1" required autofocus name="name">
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Email ID:
+                </div>
+                <div class=col-75>
+                <input placeholder="Your Email Address" type="email" tabindex="2" required name="mail">
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Phone Number:
+                </div>
+                <div class=col-75>
+                <input placeholder="Your Phone Number " type="tel" tabindex="3" required name="phno"
+                    >
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Date Of Birth:
+                </div>
+                <div class=col-75>
+                <input placeholder="Your Date of Birth" type="date" tabindex="4" required name="dob">
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Educational Qualifications:
+                </div>
+                <div class=col-75>
+                <input placeholder="Educational Qualifications" type="text" tabindex="5" required name="EQ">
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Fathers Name:
+                </div>
+                <div class=col-75>
+                <input placeholder="Fathers Name" type="text" tabindex="6" required name="fname">
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Mothers Name:
+                </div>
+                <div class=col-75>
+                <input placeholder="Mothers Name" type="text" tabindex="7" required name="mname">
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Nationality:
+                </div>
+                <div class=col-75>
+                <input placeholder="Nationality" type="text" tabindex="8" required name="POB">
+            </div>
+            </fieldset>
+
+            <fieldset>
+                    <div class=col-25>
+                <label for="appname">Gender:<br></label>
+            </div>
+            <div class=col-75>
+                <input type="radio" name="gender" value="male" checked> Male
+                <input type="radio" name="gender" value="female"> Female<br>
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    Address:
+                </div>
+                <div class=col-75>
+                <input placeholder="Address" type="text" tabindex="9" required name="address">
+            </div>
+            </fieldset>
+            
+            <fieldset>
+                    <div class=col-25>
+                    ZipCode:
+                </div>
+                <div class=col-75>
+                <input placeholder="ZipCode" type="text" tabindex="10" required name="zip">
+            </div>
+            </fieldset>
+            <fieldset>
+                <a class=savebutton onclick=validateform()>Save</a>
+            </fieldset>
+
+
+        </form>
+
+    </div>
+
+</body>
+<script src="../Javascript/Sample.js"></script>
+<script src="../Javascript/adminaccess.js"></script>
+
+</html>
