@@ -1,15 +1,4 @@
-/*function create_UUID(){
-    var dt = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (dt + Math.random()*16)%16 | 0;
-        dt = Math.floor(dt/16);
-        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
-    });
-    return uuid;
-}
 
-(create_UUID());
-*/
 
 
 function download()
@@ -43,7 +32,7 @@ function download()
         var k="3811567890"+test;
         
 
-         document.getElementById('download').innerHTML =type+h+"<br>"+a+key[test] +"<br>"+b+ key4[test]+"<br>"+c + key5[test]+"<br>"+d+ key6[test]+"<br>"+e+ key7[test]+"<br>"+f+ key8[test]+"<br>"+g+ key10[test]+"<br>"+h+":"+key[test]+"::"+k+":::"+key6[test];
+         document.getElementById('download').innerHTML =type+h+"<br>"+a+key[test] +"<br>"+b+ key4[test]+"<br>"+c + key5[test]+"<br>"+d+ key6[test]+"<br>"+e+ key7[test]+"<br>"+f+ key8[test]+"<br>"+g+ key10[test]+"<br>"+h+":"+key[test]+"::"+k;
          
     }
     else if(validate==null)
@@ -58,3 +47,4 @@ alert("Sorry, your form has been rejected :(");
 window.location.assign("index.html");
     }
 }
+
