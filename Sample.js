@@ -118,8 +118,7 @@ function login() {
         }
          
         if(flag == true){
-            alert('Logged in');
-            validateform();
+             validateform();
             
        
         }
@@ -162,6 +161,7 @@ function validateform(){
 
 
     if(key==null || key[test] == null){
+        alert("Hi! "+key[test]);
         window.location.assign("Apply Now.html");
         SaveItem();
         
