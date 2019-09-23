@@ -60,7 +60,7 @@ body,html {
   text-align: center;
   float: right;
   line-height: 70px;position: relative;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(221, 51, 74, 100);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(221, 51, 74, 5);
   
   
   
@@ -95,7 +95,7 @@ body,html {
   top:100px;position: relative;
   opacity: 0.9;
   line-height: 70px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(37, 141, 11, 4);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(37, 141, 11, 5);
   
 
 }
@@ -221,8 +221,7 @@ tr:nth-child(even) {
   height: 150px;
   left:29%;
   bottom:150px;
- 
-}
+ }
 #download{
   position: relative;
   left:340px;
@@ -236,6 +235,7 @@ tr:nth-child(even) {
   background: black;
   opacity: 0.75;
   border:1px solid whitesmoke;
+  box-shadow: 0 0 20px 0 rgb(165, 23, 23,100), 0 5px 5px 0 rgb(204, 5, 98);
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -323,7 +323,8 @@ h1{
   
   padding: 15px;
   margin: 150px 0;
-  
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 102), 0 5px 5px 0 rgba(102, 51, 74, 100);
+
 }
 
 fieldset {
