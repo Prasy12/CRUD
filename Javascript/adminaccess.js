@@ -11,7 +11,7 @@ var address=[];
 var zip=[];
 var status1=[];
 var str;
-
+var pp;
 function doShowAll() {
     
        var key =0;
@@ -74,10 +74,10 @@ function Save(){
        
          str= "status" + i;
         
-        status1= document.getElementById(str).value;
-        window.localStorage[str] = JSON.stringify(status1); 
-        key11.push({str:document.getElementById(str).value});  
-       }
+         status1= document.getElementById(str).value;
+         window.localStorage[str] = JSON.stringify(status1); 
+         key11.push({str:document.getElementById(str).value});  
+        }
 
 
        
@@ -95,21 +95,13 @@ function Save(){
     
 
    function deletee(td) {   
+    
     if (confirm('Are you Sure ?')) {
         row = td.parentElement.parentElement;
         count = td.parentElement;
-        
         pp = row.rowIndex;
-    
-
-        
-        localStorage.removeItem(appname,appname[0]);
-
-        document.getElementById("list").deleteRow(row.rowIndex);    
-       
-        
-        
-        
+        document.getElementById("list").deleteRow(row.rowIndex);
+             
     } 
     
 }
