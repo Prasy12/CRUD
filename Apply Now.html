@@ -19,46 +19,75 @@
             <nav>
                 <div class="wb-nav">
                     <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="Apply Now.html">Apply Now</a></li>
-                            <li><a href="trackapplication.html">Track Applications</a></li>
-                        <li><a href="download.html">Download</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Apply Now.html">Apply Now</a></li>
+                        <li><a href="trackapplication.html">Track Applications</a></li>
+                        
                     </ul>
                 </div>
             </nav>
-            <h1>Passport Form</h1>
-            <form id="PassportForm" autocomplete="off" required>
+            
+        </header>  
+        
+        <div class="wb-container">
+            <form id="PassportForm" autocomplete="off">
+               <div class="ppheading">PASSPORT FORM:</div> 
+                <fieldset>
+                FullName:<br>
+                <input placeholder="Your name" type="text" tabindex="1" required autofocus name="name">
+                </fieldset>
+                Email ID:
+                <fieldset>
+                    <input placeholder="Your Email Address" type="email" tabindex="2" required name="mail">
+                </fieldset>
+                Phone Number:
+                <fieldset>
+                    <input placeholder="Your Phone Number " type="tel" tabindex="3" required name="phno"
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                </fieldset>
+                Date Of Birth:
+                <fieldset>
+                    <input placeholder="Your Date of Birth" type="date" tabindex="4" required name="dob">
+                </fieldset>
+                Educational Qualifications:
+                <fieldset>
+                    <input placeholder="Educational Qualifications" type="text" tabindex="5" required name="EQ">
+                </fieldset>
+                Fathers Name:
+                <fieldset>
+                    <input placeholder="Fathers Name" type="text" tabindex="6" required name="fname">
+                </fieldset>
+                Mothers Name:
+                <fieldset>
+                    <input placeholder="Mothers Name" type="text" tabindex="7" required name="mname">
+                </fieldset>
+                Nationality:
+                <fieldset>
+                    <input placeholder="Nationality" type="text" tabindex="8" required name="POB">
+                </fieldset>
 
-                <div id="PassportForm1">
-
-                    Fullname:
-                    <input type=text name=name>
-                    Email Address:
-                    <input type=email name=mail>
-                    <tr>Phone Number:</tr>
-                    <input type=number name=phno>
-                    Date of Birth:
-                    <input type=date name=dob>
-                    Educational Qualifications:
-                    <input type=text name=EQ>
-                    Father's Name:
-                    <input type=text name=fname>
-                    Mother's Name:
-                    <input type=text name=mname>
-                    Nationality:
-                    <input type=text name=POB>
-                    Gender:<br>
-                    <input type="radio" name="gender" value="male" checked> Male<br>
+                <fieldset>
+                    <label for="appname">Gender:<br></label>
+                    <input type="radio" name="gender" value="male" checked> Male
                     <input type="radio" name="gender" value="female"> Female<br>
-                    Address:
-                    <input type=text name=address>
-                    ZipCode:
-                    <input type=number name=zip>
+                </fieldset>
+                Address:
+                <fieldset>
+                    <input placeholder="Address" type="text" tabindex="9" required name="address">
+                </fieldset>
+                ZipCode:
+                <fieldset>
+                    <input placeholder="ZipCode" type="text" tabindex="10" required name="zip">
+                </fieldset>
+                <fieldset>
                     <a class=savebutton onclick=validateform()>Save</a>
-                </div>
+                </fieldset>
+
+            </div>
             </form>
+       
         </div>
-    </header>
+   
 </body>
 <script src="Sample.js"></script>
 <script src="adminaccess.js"></script>
