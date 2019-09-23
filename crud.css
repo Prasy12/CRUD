@@ -62,7 +62,7 @@ body,html {
   line-height: 70px;position: relative;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(221, 51, 74, 5);
   
-  
+  background-color: rgba(194, 25, 25, 0.2)
   
 }
 #name1,#userName,#userPw,#pw
@@ -96,7 +96,7 @@ body,html {
   opacity: 0.9;
   line-height: 70px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(37, 141, 11, 5);
-  
+  background-color: rgba(56, 196, 56, 0.2)
 
 }
 #name1,#pw,#userName,#userPw
@@ -198,6 +198,7 @@ body,html {
 
 table{
     border-collapse: collapse;
+    box-shadow: 0 0 20px 0 rgba(100, 100,100, 120) ;
 }
 table.list{
     width:100%;
@@ -312,10 +313,12 @@ tr:nth-child(even) {
 
 
 h1{
+  width:55%;
   position: relative;
   left:25%;
   top:55px;
   color: antiquewhite;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgb(97, 100, 97);
 }
 
 
@@ -324,7 +327,7 @@ h1{
   padding: 15px;
   margin: 150px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 102), 0 5px 5px 0 rgba(102, 51, 74, 100);
-
+background-color: rgb(170, 164, 164,0.5)
 }
 
 fieldset {
@@ -368,7 +371,7 @@ fieldset {
 .ppheading
 {
   margin-left:500px;
-  color:blue;
+  color:white;
   font-size: 30px;
 }
 
