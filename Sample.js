@@ -20,10 +20,7 @@ window.onclick = function(event) {
   }
 }
 
-
-
-
-
+/*Login*/
 flag =1;
 var countfromls=1;
 localStorage.setItem('count',countfromls);
@@ -34,7 +31,8 @@ var f;
 var id =0;
 function signup() 
     {
-           
+           if(countfromls>=1)
+           {
                 if((document.getElementById("name1").value == "")) 
                 {
                     alert("Enter an username"); 
@@ -63,7 +61,7 @@ function signup()
                         }
                   }
                 }
-                
+            }
                 
                 if( flag ==2)
                 {
@@ -81,9 +79,7 @@ function signup()
          password.push(document.getElementById("pw").value);
          window.localStorage["password"] = JSON.stringify(password);
          alert("Registered Successfuly!");
-         
-         
-             
+                         
              }
 
             
@@ -134,7 +130,7 @@ function login() {
         }
          else if(usernameInput=="admin" && passwordInput=="admin")
     {
-       
+       alert("Admin Logged In!")
         window.location.assign("allapplications.html");
     }
         
@@ -294,6 +290,7 @@ document.forms.PassportForm.address.value = "";
 document.forms.PassportForm.zip.value = "";
 
 trackapplication();
+
 }
 }
 function trackapplication()
