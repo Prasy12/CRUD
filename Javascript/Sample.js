@@ -187,6 +187,10 @@ else if (document.forms.PassportForm.mail.value == "")
 {
     alert("Please enter your phone number");
 }
+else if(document.forms.PassportForm.dob.value == "")
+{
+    alert("Enter your DOB");
+}
 else if(document.forms.PassportForm.EQ.value == "")
 {
     alert("Enter your Educational Qualifications");
