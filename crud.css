@@ -6,7 +6,7 @@
 body,html {
     height:auto;
     width: 100%;
-    height: 100%;
+    height: 140%;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth; 
@@ -14,7 +14,7 @@ body,html {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
+    overflow-x: hidden;
     }
 .wb-container{
     max-width: 75.000em;
@@ -52,14 +52,16 @@ body,html {
 #register-form
 {
   font-family: 'Dosis', sans-serif;
-
+  line-height: 50px;
   color:white;
   width:40%;
   padding: 1em;
-  margin-top: 10em;
+  top:100px;
   text-align: center;
   float: right;
-
+  line-height: 70px;position: relative;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(221, 51, 74, 100);
+  
   
   
 }
@@ -80,26 +82,27 @@ body,html {
   
 }
 /* Login form*/
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
+
 
 #login-form
 {
   font-family: 'Dosis', sans-serif;
-
   padding: 1em;
   color:white;
   width: 40%;
   text-align: center;
   float: right;
-  margin-top: 10em;
+  top:100px;position: relative;
   opacity: 0.9;
+  line-height: 70px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(37, 141, 11, 4);
+  
+
+}
+#name1,#pw,#userName,#userPw
+{
+  width:250px;
+  padding: 10px;
 }
 .loginbutton
 {
@@ -114,19 +117,7 @@ input[type=text], input[type=password] {
   
   
 }
-.savebutton
-{
- 
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  width:35px;
-  border:solid 1px whitesmoke;
-  background-color: black;
-  cursor: pointer;
-  
-  
-}
+
 
 
 .modal {
@@ -178,7 +169,7 @@ input[type=text], input[type=password] {
   font-size: 1.2em;
   width:180px;
   height: 40px;
-  margin-bottom: 1em; 
+  top:150px;position: relative;
   margin-left: 25.5em;
 }
  
@@ -217,19 +208,9 @@ td, th {
     text-align: left;
     padding: 8px;
 }
-/* Passport form*/
-#PassportForm
-{
-  width:10%;
-  color:white;
- 
-
+tr:nth-child(even) {
+  background-color:rgba(14, 173, 134, 0.9)
 }
-#list,#list1
-{
-  color:white;
-}
-    
 
 
 
@@ -239,7 +220,7 @@ td, th {
   width:150px;
   height: 150px;
   left:29%;
-  bottom:100px;
+  bottom:150px;
  
 }
 #download{
@@ -307,3 +288,89 @@ td, th {
   left:50%;
   background-color: white;
 }
+#EditButton
+{
+  padding: 15px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width:80px;
+  border:solid 1px whitesmoke;
+  margin-top: 15em;
+  cursor: pointer;
+  color:black;
+  left:40%;
+  background-color: white;
+}
+
+/*Display*/
+#list,#list1
+{
+  
+  color: white;
+}
+
+
+h1{
+  position: relative;
+  left:25%;
+  top:55px;
+  color: antiquewhite;
+}
+
+
+#PassportForm {
+  
+  padding: 15px;
+  margin: 150px 0;
+  
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  padding: 0;
+  width: 100%;
+}
+
+#PassportForm input[type="text"],
+#PassportForm input[type="email"],
+#PassportForm input[type="tel"],
+#PassportForm textarea {
+  width: 20%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+
+}
+.savebutton
+{
+   text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width:40px;
+  border:solid 1px whitesmoke;
+  background-color: red;
+  cursor: pointer;
+  color: bisque;
+  
+}
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top:2em;
+}
+.ppheading
+{
+  margin-left:500px;
+  color:blue;
+  font-size: 30px;
+}
+
+
+
+
