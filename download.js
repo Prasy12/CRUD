@@ -20,16 +20,17 @@ function download()
     var validate=JSON.parse(localStorage.getItem(display))
     if(validate=='Approved')
     {
+        key =  JSON.parse(localStorage.getItem("appname"));;
+        key4 = JSON.parse(localStorage.getItem('fname'));
+        key5 = JSON.parse(localStorage.getItem('mname'));
+        key6 = JSON.parse(localStorage.getItem('POB'));
+        key7 =JSON.parse(localStorage.getItem('gender'));
+        key8 = JSON.parse(localStorage.getItem('address'));
+        key10 = JSON.parse(localStorage.getItem('dob'));
+      
     
-    
-           key =  JSON.parse(localStorage.getItem("appname"));;
-           key4 = JSON.parse(localStorage.getItem('fname'));
-           key5 = JSON.parse(localStorage.getItem('mname'));
-           key6 = JSON.parse(localStorage.getItem('POB'));
-           key7 =JSON.parse(localStorage.getItem('gender'));
-           key8 = JSON.parse(localStorage.getItem('address'));
-           key10 = JSON.parse(localStorage.getItem('dob'));
-         
+    alert("Congrats "+key[test]+"! Your application has been approved!");
+          
         var a="Name:";
         var b="Fathers' Name:";
         var c="Mothers' Name:";
@@ -47,12 +48,13 @@ function download()
     }
     else if(validate==null)
     {
-        alert("Application is submitted. Please wait for status...");
+        alert("Oops!! Your application is still being processed...");
+        alert("Redirecting you back to your application!")
         window.location.assign("trackapplication.html");
     }
     else
     {
-alert("Sorry, your form has been rejected");
+alert("Sorry, your form has been rejected :(");
 window.location.assign("index.html");
     }
 }

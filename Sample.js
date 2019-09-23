@@ -30,14 +30,14 @@ localStorage.setItem('count',countfromls);
 
 
 var username = []; var password=[];
-flag = true;
+var f;
 var id =0;
 function signup() 
     {
            
                 if((document.getElementById("name1").value == "")) 
                 {
-                    alert("Enter a username"); 
+                    alert("Enter an username"); 
                     flag =0;
                 }
                 else if( document.getElementById("pw").value== "")
@@ -67,7 +67,7 @@ function signup()
                 
                 if( flag ==2)
                 {
-                    alert("Username already exists");
+                    alert("Oops! Username already exists!");
                 }
              else if(flag==1)
              {
@@ -80,7 +80,7 @@ function signup()
          {password = JSON.parse(window.localStorage["password"]);}
          password.push(document.getElementById("pw").value);
          window.localStorage["password"] = JSON.stringify(password);
-         alert("Registered Successfuly");
+         alert("Registered Successfuly!");
          
          
              
@@ -100,24 +100,34 @@ function login() {
     password1 = JSON.parse(localStorage.getItem("password"));
     var usernameInput = document.getElementById("userName").value;
     var passwordInput = document.getElementById("userPw").value;
+     { if(usernameInput=="")
+      {
+          alert("Enter an username!");
+      }
+      else if(passwordInput=="")
+      {
+          alert("Enter a password!")
+      }
    
-   
-        if(usernameInput!="" && passwordInput!="") {
-           for(i=0;i<username1.length;i++){
+        else
+         {
+           for(i=0;i<username1.length;i++)
+           {
            if(usernameInput == username1[i] && passwordInput == password1[i]) 
             {
              
-                flag = true; id=i;
+                f = true; id=i;
                 localStorage.setItem("userid",id);
                 break;
             } else {
-                flag = false;
+                f = false;
             }
            }
-           
+        }  
         }
          
-        if(flag == true){
+        if(f == true){
+            alert("Logged In!")
              validateform();
             
        
@@ -129,7 +139,7 @@ function login() {
     }
         
         else{
-            alert('Invalid Username and password');
+            alert('Invalid Username and password!');
             document.getElementById("userName").value = "";
             document.getElementById("userPw").value = "";
 
@@ -155,19 +165,17 @@ var zip=[];
 function validateform(){
 
     var test=localStorage.getItem("userid");
-          alert(test);
-
     key =  JSON.parse(localStorage.getItem("appname"));
 
 
     if(key==null || key[test] == null){
-        alert("Hi! "+key[test]);
         window.location.assign("Apply Now.html");
         SaveItem();
         
     }
     else{
-        alert(" Passport application already submitted");
+        alert(" Welcome back " + key[test] +"! Your application is being processed...");
+        alert("Redirecting you to status page!")
         window.location.assign("trackapplication.html");
     }
 
@@ -178,7 +186,7 @@ function SaveItem() {
       
  if(document.forms.PassportForm.name.value == "")
 {
-    alert("Please enter the name");
+    alert("Please enter your name");
     
 }
 else if (document.forms.PassportForm.mail.value == "")
