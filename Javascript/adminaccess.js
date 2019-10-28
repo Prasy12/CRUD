@@ -12,7 +12,7 @@ var zip=[];
 var status1=[];
 var str;
 var pp;
-function doShowAll() {
+function ShowAllapplications() {
     
        var key =0;
        
@@ -52,7 +52,7 @@ function doShowAll() {
 
 
 var str;
-function Save(){
+function UpdatedApplication(){
     
         var list2 = "<tr><th>S.No</th><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Nationality</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th><th>Delete</th></tr>\n";
         key =  JSON.parse(localStorage.getItem("appname"));;
