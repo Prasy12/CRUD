@@ -1,7 +1,5 @@
 *{
     font-family: 'Roboto Slab', serif;
-
-
 }
 body,html {
     height:auto;
@@ -20,9 +18,6 @@ body,html {
     max-width: 75.000em;
     margin: 0 auto;    
 }
-
-   
-
 .wb-active
 {
     border: solid 0.0.006em white;
@@ -61,7 +56,6 @@ body,html {
   float: right;
   line-height: 70px;position: relative;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(221, 51, 74, 5);
-  
   background-color: rgba(194, 25, 25, 0.2)
   
 }
