@@ -1,7 +1,7 @@
 
 
 
-function download()
+function downloadapplication()
 {
            
     var test=localStorage.getItem("userid");
