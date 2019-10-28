@@ -161,7 +161,7 @@ function validateform(){
 
     if(key==null || key[test] == null){
         window.location.assign("Apply Now.html");
-        SaveItem();
+        SaveApplication();
         
     }
     else{
@@ -173,7 +173,7 @@ function validateform(){
 
 }
 
-function SaveItem() {
+function SaveApplication() {
     
  if(document.forms.PassportForm.name.value == "")
 {
