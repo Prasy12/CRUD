@@ -132,7 +132,7 @@ function login() {
     else
     {
         alert("Logged In!")
-        validateform();
+        validateForm();
 
     }
 }
@@ -153,7 +153,7 @@ var address=[];
 var zip=[];
 
 
-function validateform(){
+function validateForm(){
 
     var test=localStorage.getItem("userid");
     key =  JSON.parse(localStorage.getItem("appname"));
@@ -161,7 +161,7 @@ function validateform(){
 
     if(key==null || key[test] == null){
         window.location.assign("Apply Now.html");
-        SaveApplication();
+        saveApplication();
         
     }
     else{
@@ -173,7 +173,7 @@ function validateform(){
 
 }
 
-function SaveApplication() {
+function saveApplication() {
     
  if(document.forms.PassportForm.name.value == "")
 {
@@ -289,11 +289,11 @@ document.forms.PassportForm.gender.value = "";
 document.forms.PassportForm.address.value = "";
 document.forms.PassportForm.zip.value = "";
 
-trackapplication();
+trackApplication();
 
 }
 }
-function trackapplication()
+function trackApplication()
 {
     
     var test=localStorage.getItem("userid")
