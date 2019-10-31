@@ -33,14 +33,14 @@ function signup()
     {
            if(countfromls>=1)
            {
-                if((document.getElementById("name1").value == "")) 
+                if((document.getElementById("name1").value == "" || document.getElementById("name1").value.length > 10)) 
                 {
-                    alert("Enter an username"); 
+                    alert("Enter a valid username"); 
                     flag =0;
                 }
-                else if( document.getElementById("pw").value== "")
+                else if( document.getElementById("pw").value== "" || document.getElementById("name1").value.length > 10)
                 {
-                    alert("Enter a password");
+                    alert("Enter a valid password");
                     flag=0;
                 } 
                 
@@ -217,7 +217,7 @@ else if(document.forms.PassportForm.address.value == "")
 {
     alert("Enter your address");
 }
-else if(document.forms.PassportForm.zip.value == "" || document.forms.PassportForm.zip.value.length !=10)
+else if(document.forms.PassportForm.zip.value == "" || document.forms.PassportForm.zip.value.length !=6)
 {
     alert("Enter the ZIP Code");
 }
