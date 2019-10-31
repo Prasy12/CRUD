@@ -1,4 +1,58 @@
-#download{
+.card{
     position: relative;
-    left:50%;
+    width:150px;
+    height: 150px;
+    left:29%;
+    bottom:150px;
+   }
+  #download{
+    position: relative;
+    left:340px;
+    top:150px;
+    padding-left: 200px;
+    color: whitesmoke;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:1.2em;
+    line-height: 35px;
+    width:250px;
+    background: black;
+    opacity: 0.75;
+    border:1px solid whitesmoke;
+    box-shadow: 0 0 20px 0 rgb(165, 23, 23,100), 0 5px 5px 0 rgb(204, 5, 98);
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  .downloadbutton
+  {
+   padding: 15px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width:80px;
+    border:solid 1px whitesmoke;
+    margin-top: 5em;
+    cursor: pointer;
+    color:black;
+    left:45%;
+    background-color: white;
+  }
+  /*Print*/
+#PrintButton
+{
+  padding: 15px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width:80px;
+  border:solid 1px whitesmoke;
+  margin-top: 15em;
+  cursor: pointer;
+  color:black;
+  left:32%;
+  background-color: white;
 }
