@@ -317,7 +317,8 @@ function trackApplication()
             list1 += "<tr><td>"+ "1" + "</td>\n<td>" + key[test] + "</td>\n<td>"
             + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"\n<td>"+
             display1+ "</td></tr>\n";
-           }else{
+           }
+           else{
             list1 += "<tr><td>"+ "1" + "</td>\n<td>" + key[test] + "</td>\n<td>"
             + key1[test] +"</td>\n<td>"+key2[test]+"</td>\n<td>"+key3[test]+"</td>\n<td>"+key4[test]+"</td>\n<td>"+key5[test]+"</td>\n<td>"+key6[test]+"</td>\n<td>"+key7[test]+"</td>\n<td>"+key8[test]+"</td>\n<td>"+key9[test]+ "</td>\n<td>"+key10[test]+"\n<td>"+
             JSON.parse(localStorage.getItem(display))+ "</td></tr>\n";
