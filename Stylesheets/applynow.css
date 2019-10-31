@@ -1,0 +1,63 @@
+#PassportForm {
+  padding: 15px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 102), 0 5px 5px 0 rgba(102, 51, 74, 100);
+background-color: rgb(170, 164, 164,0.5);
+color:white;
+}
+
+fieldset {
+   margin: 0 0 10px;
+  padding: 0;
+  width: 100%;
+}
+
+#PassportForm input[type="text"],
+#PassportForm input[type="email"],
+#PassportForm input[type="tel"],
+#PassportForm textarea {
+  width: 20%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+
+}
+.savebutton
+{
+   text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width:40px;
+  border:solid 1px whitesmoke;
+  background-color: red;
+  cursor: pointer;
+  color: bisque;
+  
+}
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top:2em;
+}
+.ppheading
+{
+  margin-left:500px;
+  color:white;
+  font-size: 28px;
+}
+
+.col-25 {
+  float:left;
+  width:25%;
+  margin-top:.4em;
+}
+ 
+.col-75 {
+  float:left;
+  width:75%;
+  margin-top:.4em;
+}
