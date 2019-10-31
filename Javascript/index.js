@@ -1,7 +1,7 @@
 /*modal*/
 var modal = document.getElementById("myModal");
  
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("modalbutton");
  
 var span = document.getElementsByClassName("close")[0];
  
