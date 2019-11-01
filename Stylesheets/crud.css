@@ -56,7 +56,7 @@ body,html {
   float: right;
   line-height: 70px;position: relative;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(221, 51, 74, 5);
-  background-color: rgba(194, 25, 25, 0.2)
+  
   
 }
 #name1,#userName,#userPw,#pw
@@ -90,7 +90,7 @@ body,html {
   opacity: 0.9;
   line-height: 70px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(37, 141, 11, 5);
-  background-color: rgba(56, 196, 56, 0.2)
+  
 
 }
 #name1,#pw,#userName,#userPw
