@@ -54,7 +54,7 @@ function showAllApplications() {
 var str;
 function updatedApplication(){
     
-        var list2 = "<tr><th>S.No</th><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Nationality</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th><th>Delete</th></tr>\n";
+        var list2 = "<tr><th>S.No</th><th>FullName</th><th>Email</th><th>Phone Number</th><th>Educational Qualifications</th><th>Fathers Name</th><th>Mothers Name</th><th>Nationality</th><th>Gender</th><th>Address</th><th>Zipcode</th><th>Date of Birth</th><th>Status</th></tr>\n";
         key =  JSON.parse(localStorage.getItem("appname"));;
         key1 = JSON.parse(localStorage.getItem("mail"));;
         key2= JSON.parse(localStorage.getItem('phno'));
@@ -87,22 +87,10 @@ function updatedApplication(){
        list2 += "<tr><td>" +sno+"</td>\n<td>" + key[i] + "</td>\n<td>"
        + key1[i] +"</td>\n<td>"+key2[i]+"</td>\n<td>"+key3[i]+"</td>\n<td>"+key4[i]+"</td>\n<td>"
        +key5[i]+"</td>\n<td>"+key6[i]+"</td>\n<td>"+key7[i]+"</td>\n<td>"+key8[i]+"</td>\n<td>"+key9[i]+
-       "</td>\n<td>"+key10[i]+"</td>\n<td>"+key11[i].str+"</td><td><input type=submit onclick=deletee(this) value='Delete ' id=btn-delete></td></tr>\n";
+       "</td>\n<td>"+key10[i]+"</td>\n<td>"+key11[i].str;
        }
       
        document.getElementById('list').innerHTML =list2 ;  
    }   
     
-
-   function deletee(td) {   
-    
-    if (confirm('Are you Sure ?')) {
-        row = td.parentElement.parentElement;
-        count = td.parentElement;
-        pp = row.rowIndex;
-        document.getElementById("list").deleteRow(row.rowIndex);
-             
-    } 
-    
-}
 
