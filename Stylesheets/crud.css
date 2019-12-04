@@ -12,7 +12,7 @@ body,html {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow-x: hidden;
+   
     }
 .wb-container{
     max-width: 75.000em;
@@ -264,5 +264,115 @@ h1{
 
 
 
+@media only screen and (max-width: 1010px) 
+{
+  #modalbutton{
+    cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  font-size: 1.2em;
+  width:180px;
+  height: 40px;
+  top:150px;position: relative;
+  margin-left: 17em;
+}
+ 
+  #register-form
+  {
+    margin-right: 5em;
+    font-family: 'Dosis', sans-serif;
+    line-height: 50px;
+    color:white;
+    width:30%;
+    padding: 1em;
+    top:100px;
+    text-align: center;
+    float: right;
+    line-height: 70px;position: relative;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(221, 51, 74, 5);
+    
+    
+  }
+  #name1,#userName,#userPw,#pw
+  {
+    width:70%;
+  }
+  #rgstr_btn
+  {
+    background-color:red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.9;
+    
+  }
+  /* Login form*/
+  
+  
+  #login-form
+  {
+    margin-right: 5em;
+    font-family: 'Dosis', sans-serif;
+    padding: 1em;
+    color:white;
+    width: 30%;
+    text-align: center;
+    float: right;
+    top:100px;position: relative;
+    opacity: 0.9;
+    line-height: 70px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgba(37, 141, 11, 5);
+    
+  
+  }
+  #name1,#pw,#userName,#userPw
+  {
+    width:250px;
+    padding: 10px;
+  }
+  .loginbutton
+  {
+   
+    background-color:green;
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    cursor: pointer;
+    width: 22%;
+    opacity: 0.9;
+    
+    
+  }
+  h1{
+    width:65%;
+    position: relative;
+    left:13%;
+    top:55px;
+    color: antiquewhite;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 12), 0 5px 5px 0 rgb(97, 100, 97);
+  }
+  table{
+    margin-left:2.5em;
+    width:30%; 
+    border-collapse: collapse;
+    box-shadow: 0 0 20px 0 rgba(100, 100,100, 120) ;
+}
+table.list{
+    width:20%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 3px;
+}
+tr:nth-child(even) {
+  background-color:rgba(14, 173, 134, 0.9)
+}
+ }
 
 
