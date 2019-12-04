@@ -104,7 +104,7 @@ function login() {
     }
     else if(usernameInput=="admin" && passwordInput=="admin")
     {
-       alert("Admin Logged In!")
+       
         window.location.assign("allapplications.html");
         
     }
@@ -133,7 +133,7 @@ function login() {
     }
     else
     {
-        alert("Logged In!")
+       
         validateForm();
 
     }
@@ -168,7 +168,7 @@ function validateForm(){
     }
     else{
         alert(" Welcome back " + key[test] +"! Your application is being processed...");
-        alert("Redirecting you to status page!")
+       
         window.location.assign("trackapplication.html");
     }
 
@@ -278,7 +278,7 @@ if(window.localStorage["zip"] != null)
 zip.push(document.forms.PassportForm.zip.value);
 window.localStorage["zip"] = JSON.stringify(zip);
 
-alert("Form submitted successfully");
+
 window.location.assign("trackapplication.html");
 document.forms.PassportForm.name.value = "";
 document.forms.PassportForm.mail.value = "";
